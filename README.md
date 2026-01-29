@@ -41,7 +41,7 @@ sudo ./install.sh
 
 2. Install using the Fedora script:
    ```bash
-   git clone [https://github.com/Batuhan4/victus-control.git](https://github.com/Batuhan4/victus-control.git)
+   git clone https://github.com/Batuhan4/victus-control.git
    cd victus-control
    chmod +x fedora-install.sh
    sudo ./fedora-install.sh
