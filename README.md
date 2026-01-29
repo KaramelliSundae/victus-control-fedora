@@ -43,8 +43,8 @@ sudo ./install.sh
    ```bash
    git clone [https://github.com/Batuhan4/victus-control.git](https://github.com/Batuhan4/victus-control.git)
    cd victus-control
-   chmod +x install_fedora.sh
-   sudo ./install_fedora.sh
+   chmod +x fedora-install.sh
+   sudo ./fedora-install.sh
    ```
 
 ---
