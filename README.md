@@ -20,7 +20,7 @@ Fan control for HP Victus / Omen laptops on Linux. Stock firmware keeps both fan
 
 ### Arch Linux (Default)
 ```bash
-git clone [https://github.com/Batuhan4/victus-control.git](https://github.com/Batuhan4/victus-control.git)
+git clone https://github.com/Batuhan4/victus-control.git
 cd victus-control
 sudo ./install.sh
 ```
