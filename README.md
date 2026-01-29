@@ -11,16 +11,44 @@ Fan control for HP Victus / Omen laptops on Linux. Stock firmware keeps both fan
 - **Keyboard lighting** toggles single-zone RGB colour and brightness.
 
 ## System Requirements
-- 64-bit Linux with `systemd` (Arch-based distros confirmed).
-- Packages installed automatically: `meson`, `ninja`, `gtk4`, `git`, `dkms`, `linux-headers`.
+- 64-bit Linux with `systemd`.
+- **Arch Linux**: `pacman` (dependencies installed automatically).
+- **Fedora**: `dnf` (dependencies installed automatically).
 - Root privileges for installing the DKMS module, sudoers rules, and systemd units.
 
 ## Install & Update
+
+### Arch Linux (Default)
 ```bash
-git clone https://github.com/Batuhan4/victus-control.git
+git clone [https://github.com/Batuhan4/victus-control.git](https://github.com/Batuhan4/victus-control.git)
 cd victus-control
 sudo ./install.sh
 ```
+
+### Fedora Linux
+
+> [!IMPORTANT]
+> You **MUST!!!** update your kernel and reboot before installing. This ensures the kernel headers installed by the script match your currently running kernel, which is required for DKMS to build the driver.
+
+> [!NOTE]
+> **Validation Status:** Validated on **HP Victus 16-S0046NT** running **Fedora 43** (Kernel 6.18.7-200.fc43.x86_64). SELinux was enabled (Enforcing) during testing and caused no issues with backend operations or fan control (Keyboard lights controls aren't really working for this model but fan control is perfect.).
+
+1. Update and reboot:
+   ```bash
+   sudo dnf update --refresh
+   sudo reboot
+   ```
+
+2. Install using the Fedora script:
+   ```bash
+   git clone [https://github.com/Batuhan4/victus-control.git](https://github.com/Batuhan4/victus-control.git)
+   cd victus-control
+   chmod +x install_fedora.sh
+   sudo ./install_fedora.sh
+   ```
+
+---
+
 The installer handles dependency install, user/group creation, DKMS module registration, build + install, and restarts `victus-backend.service`. Log out/in afterwards so your user joins the `victus` group.
 
 ### Background services
